@@ -1,0 +1,6 @@
+{
+    "require": {
+        "cheddar-getter/client": "*",
+        "stripe/stripe-php": "*"
+    }
+}
