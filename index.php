@@ -22,12 +22,6 @@
                         submission, you will receive a token via Stripe.js.
                     </p>
                     <p class="text-secondary">
-                        To be able to submit this form, you'll need to add your
-                        Stripe publishable key to line 5 of
-                        <code>index.js</code>. It's recommended that you use a
-                        key from a test account.
-                    </p>
-                    <p class="text-secondary">
                         Per the Stripe.js documentation, "try it out using the
                         test card number 4242 4242 4242 4242, a random
                         three-digit CVC number, any expiration date in the

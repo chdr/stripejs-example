@@ -25,8 +25,8 @@
                         In the real world, you'd probably move directly from
                         <code>index.php</code> and the Stripe.js form to
                         <code>third.php</code> and create a customer in Stripe.
-                        This page is meant to slow highlight the required pass
-                        of the Stripe.js token to your server.
+                        This page is meant to slow things down and highlight the
+                        required pass of the Stripe.js token to your server.
                     </p>
                     <p class="text-secondary">
                         Note that only an email address and Stripe.js token is
@@ -38,14 +38,6 @@
                         <code>name</code> attribute that was included when
                         creating the Stripe.js token. Later, we will explicitly
                         pass a name for the customer to Cheddar when creating it.
-                    </p>
-                    <p class="text-secondary">
-                        To continue, you'll need to change line 10 in
-                        <code>third.php</code> to contain your Stripe secret key.
-                        It's recommended that you use a key from a test account.
-                        The secret key you use should be from the account
-                        corresponding to the public key you used in the previous
-                        step.
                     </p>
                     <p class="text-secondary">
                         Note that submitting this form will create a customer

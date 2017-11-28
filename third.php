@@ -1,14 +1,13 @@
 <?php
 require 'vendor/autoload.php';
+$config = require('config.php');
 
 $post = array_filter($_POST);
 
 if (!empty($post)) {
     /* --- Set your Stripe secret key --- */
 
-    // Use a key from a test account, please
-    $stripeSecretKey = 'SECRET_KEY';
-    \Stripe\Stripe::setApiKey($stripeSecretKey);
+    \Stripe\Stripe::setApiKey($config['stripe']['secretKey']);
 
    /* --- Create a customer in stripe --- */
 
@@ -21,22 +20,22 @@ if (!empty($post)) {
         ));
     } catch (\Stripe\Error\RateLimit $e) {
         // Too many requests made to the API too quickly
-        die($e->getCode() . '-' . $e->getAuxCode() . ': ' .$e->getMessage());
+        die($e);
     } catch (\Stripe\Error\InvalidRequest $e) {
         // Invalid parameters were supplied to Stripe's API
-        die($e->getCode() . '-' . $e->getAuxCode() . ': ' .$e->getMessage());
+        die($e);
     } catch (\Stripe\Error\Authentication $e) {
         // Authentication with Stripe's API failed
-        die($e->getCode() . '-' . $e->getAuxCode() . ': ' .$e->getMessage());
+        die($e);
     } catch (\Stripe\Error\ApiConnection $e) {
         // Network communication with Stripe failed
-        die($e->getCode() . '-' . $e->getAuxCode() . ': ' .$e->getMessage());
+        die($e);
     } catch (\Stripe\Error\Base $e) {
         // Display a very generic error to the user, and maybe send yourself an email
-        die($e->getCode() . '-' . $e->getAuxCode() . ': ' .$e->getMessage());
+        die($e);
     } catch (Exception $e) {
         // Something else happened, completely unrelated to Stripe
-        die($e->getCode() . '-' . $e->getAuxCode() . ': ' .$e->getMessage());
+        die($e);
     }
 
     /*
@@ -75,12 +74,6 @@ if (!empty($post)) {
                         This is based off of Stripe's
                         <a href="https://stripe.com/docs/saving-cards">Saving Cards</a>
                         guide.
-                    </p>
-                    <p class="text-secondary">
-                        To continue, you'll need to change lines 8 through 11 and
-                        30 in <code>fourth.php</code> to contain corresponding
-                        information from Cheddar. It's recommended that you use
-                        information from a product in a dev account.
                     </p>
                     <p class="text-secondary">
                         Note that submitting this form will create a customer in

@@ -1,14 +1,15 @@
 <?php
 require 'vendor/autoload.php';
+$config = require('config.php');
 
 /* --- Instantiate the Client Object --- */
 
 // Don't use information from a live product, please
 $client = new CheddarGetter_Client(
-    'https://[theurlforcheddar.com]',
-    '[yourusername]',
-    '[yourpassword]',
-    '[yourproductcode]'
+    $config['cheddar']['url'],
+    $config['cheddar']['username'],
+    $config['cheddar']['password'],
+    $config['cheddar']['productCode']
 );
 
 $post = array_filter($_POST);
@@ -20,14 +21,14 @@ if (!empty($post)) {
     /* Note that the customer id from stripe is being passed to cheddar as the
     subscription->gatewayToken
     */
-    $code = strtolower($post['first-name']) . '_' . strtolower($post['last-name']);
+    $customerCode = strtolower($post['first-name']) . '_' . strtolower($post['last-name']);
     $payload = array(
-        'code' => $code,
+        'code' => $customerCode,
         'firstName' => $post['first-name'],
         'lastName' => $post['last-name'],
         'email' => $post['email'],
         'subscription' => array(
-            'planCode' => '[aplancode]',
+            'planCode' => $config['cheddar']['planCode'],
             'gatewayToken' => $post['customer-id']
         )
     );
