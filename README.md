@@ -33,9 +33,9 @@ You can pass the credit card first and last name directly to Cheddar, or by incl
 3. [Install Composer](https://getcomposer.org/doc/00-intro.md)
 4. [Use Composer](https://getcomposer.org/doc/01-basic-usage.md) to install the dependencies for this example
 5. Rename the `config.dist.php` file to `config.php`
-  1. Run `mv config.dist.php config.php`
+  * Run `mv config.dist.php config.php`
 6. Set the configuration variables in `config.php`
-  1. Replace any variables representing API keys from Stripe with those from your own test accounts in lines 5 and 6
-  2. Replace any variables representing Cheddar credentials with those from a test product in Cheddar in lines 9 through 13
+  * Replace any variables representing API keys from Stripe with those from your own test accounts in lines 5 and 6
+  * Replace any variables representing Cheddar credentials with those from a test product in Cheddar in lines 9 through 13
 7. Run the PHP built-in server with `php -S localhost:8080`
 8. Go to http://localhost:8080 in a browser
