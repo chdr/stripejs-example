@@ -1,7 +1,4 @@
 <?php
-require 'vendor/autoload.php';
-$config = require('config.php');
-
 /* --- Instantiate the Client Object --- */
 
 // Don't use information from a live product, please

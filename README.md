@@ -1,4 +1,4 @@
-# Stripe.js with Cheddar example
+# Stripe.js with Cheddar Example
 This is a simple form demonstrating how you could integrate Stripe.js with Cheddar.
 
 ## Overview
@@ -27,15 +27,13 @@ You can pass the credit card first and last name directly to Cheddar, or by incl
 3. [Cheddar API Documentation](http://docs.getcheddar.com/)
 4. [PHP Cheddar Client Repository](https://github.com/marcguyer/cheddargetter-client-php)
 
-## See it in action
+## See It in Action
 1. Clone this repository
 2. Descend into the cloned directory
 3. [Install Composer](https://getcomposer.org/doc/00-intro.md)
 4. [Use Composer](https://getcomposer.org/doc/01-basic-usage.md) to install the dependencies for this example
-5. Rename the `config.dist.php` file to `config.php`
-  * Run `mv config.dist.php config.php`
-6. Set the configuration variables in `config.php`
-  * Replace any variables representing API keys from Stripe with those from your own test accounts in lines 5 and 6
-  * Replace any variables representing Cheddar credentials with those from a test product in Cheddar in lines 9 through 13
-7. Run the PHP built-in server with `php -S localhost:8080`
-8. Go to http://localhost:8080 in a browser
+5. Set the configuration variables in `config/config.php`
+    * The command `cp config/config.dist.php config/config.php` should have run after Composer dependencies were installed
+    * Replace any variables representing API keys from Stripe with those from your own test accounts
+    * Replace any variables representing Cheddar credentials with those from a test product in Cheddar
+6. Run the PHP built-in server with `php composer.phar start` if Composer was installed locally or `composer start` if installed globally
