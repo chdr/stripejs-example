@@ -1,3 +1,7 @@
+<?php
+require '../vendor/autoload.php';
+$config = require '../config/config.php';
+?>
 <!doctype html>
 <html lang="en">
     <head>

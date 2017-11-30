@@ -1,3 +1,7 @@
+<?php
+require '../vendor/autoload.php';
+$config = require '../config/config.php';
+?>
 <!doctype html>
 <html lang="en">
     <head>
@@ -100,7 +104,7 @@
         </script>
         <!-- Include the stripe.js library, then your implementation -->
         <script src="https://js.stripe.com/v3/"></script>
-        <script type="text/javascript" src="/public/js/index.js"></script>
+        <script type="text/javascript" src="/js/index.js"></script>
 
         <!-- Optional bootstrap things -->
         <!-- jQuery first, then popper.js, then bootstrap JS -->

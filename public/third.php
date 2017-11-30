@@ -1,5 +1,8 @@
 <?php
 
+require '../vendor/autoload.php';
+$config = require '../config/config.php';
+
 $post = array_filter($_POST);
 
 if (!empty($post)) {
@@ -7,9 +10,9 @@ if (!empty($post)) {
 
     \Stripe\Stripe::setApiKey($config['stripe']['secretKey']);
 
-   /* --- Create a customer in stripe --- */
+    /* --- Create a customer in stripe --- */
 
-   // This example includes error handling per stripe's website: https://stripe.com/docs/api?lang=php#error_handling
+    // This example includes error handling per stripe's website: https://stripe.com/docs/api?lang=php#error_handling
     try {
         // The email and stripe token can be used to create a customer in stripe
         $customer = \Stripe\Customer::create(array(

@@ -1,11 +1,10 @@
 {
     "scripts": {
-        "post-install-cmd": "cp config/config.dist.php config/config.php",
-        "start": "php -S localhost:8080 public/router.php"
+        "post-install-cmd": "cp -n config/config.dist.php config/config.php"
     },
     "require": {
         "php": ">=5.4",
-        "cheddar-getter/client": "*",
-        "stripe/stripe-php": "*"
+        "cheddar-getter/client": "~1.1.0",
+        "stripe/stripe-php": "~v5.7.0"
     }
 }

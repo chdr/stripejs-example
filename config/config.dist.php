@@ -38,7 +38,7 @@ return [
         'secretKey' => ''
     ],
     'cheddar' => [
-        'url' => '',
+        'url' => 'https://cheddargetter.com',
         'username' => '',
         'password' => '',
         'productCode' => '',

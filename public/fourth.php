@@ -1,4 +1,8 @@
 <?php
+
+require '../vendor/autoload.php';
+$config = require '../config/config.php';
+
 /* --- Instantiate the Client Object --- */
 
 // Don't use information from a live product, please
@@ -34,9 +38,9 @@ if (!empty($post)) {
     // This example includes very basic error handling
     try {
         $customer = $client->newCustomer($payload);
-	    // under some circumstances, the customer is created but
-	    // contains an embedded error that needs to be handled
-	    $customer->handleEmbeddedErrors();
+        // under some circumstances, the customer is created but
+        // contains an embedded error that needs to be handled
+        $customer->handleEmbeddedErrors();
     } catch (CheddarGetter_Response_Exception $re) {
         die($re->getCode() . '-' . $re->getAuxCode() . ': ' . $re->getMessage());
     }
